@@ -33,7 +33,7 @@ const emailRegistro = async (nombre, email, token) => {
                             <p style="font-weight: 600;"> ¡Gracias por registrarte en APV! </p>
                             <p style="font-weight: 600; color: #848484;"> ¡Hola <span style="color:#414141; font-weight: 800;">${nombre}</span>, nos alegra que nos consideres como tu opción principal! </p>
                             <p> Estás a un paso de confirmar tu cuenta, solo debes hacer clic en el siguiente botón. </p>
-                            <a href="http://localhost:5173/confirmar/${token}" style="text-decoration: none; color: #414141; background-color: #4e7ba8; width: 80%; margin: 20px 0; padding: 12px 30px; border-radius: 10px; color: #fff; margin: auto; font-size: 14px; display: block;"> Confirmar cuenta </a>
+                            <a href="${process.env.FRONTEND_URL}/confirmar/${token}" style="text-decoration: none; color: #414141; background-color: #4e7ba8; width: 80%; margin: 20px 0; padding: 12px 30px; border-radius: 10px; color: #fff; margin: auto; font-size: 14px; display: block;"> Confirmar cuenta </a>
                             <div style="border-top: 1px #e9e9e9 solid; margin-top: 20px;"></div>
                             <p style="font-size: 13px; color: #575757; font-style: italic;"> Si tu no fuiste quien creo esta cuenta, por favor, ignora este mensaje. </p>
                         </div>
