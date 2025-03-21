@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
+import dotenv from "dotenv";
 
 const emailPassword = async (nombre, email, token) => {
+    dotenv.config();
     const transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
@@ -30,7 +32,7 @@ const emailPassword = async (nombre, email, token) => {
                             <p style="font-weight: 700;font-size:18px;"> ¿Olvidaste tu contraseña?</p>
                             <p style="font-weight: 600; color: #848484;"> ¡Hola <span style="color:#414141; font-weight: 800;">${nombre}</span>, solicitaste reestablecer tu contraseña! </p>
                             <p> Estás a un paso de recuperar el acceso a tu cuenta, solo debes hacer clic en el siguiente botón. </p>
-                            <a href="http://localhost:5173/olvide-password/${token}" style="text-decoration: none; color: #414141; background-color: #4e7ba8; width: 80%; margin: 20px 0; padding: 12px 30px; border-radius: 10px; color: #fff; margin: auto; font-size: 14px; display: block;"> Reestablecer contraseña </a>
+                            <a href="${process.env.FRONTEND_URL}/olvide-password/${token}" style="text-decoration: none; color: #414141; background-color: #4e7ba8; width: 80%; margin: 20px 0; padding: 12px 30px; border-radius: 10px; color: #fff; margin: auto; font-size: 14px; display: block;"> Reestablecer contraseña </a>
                             <div style="border-top: 1px #e9e9e9 solid; margin-top: 20px;"></div>
                             <p style="font-size: 13px; color: #575757; font-style: italic;"> Si tu no fuiste quien realizó esta acción, por favor ignora este mensaje. </p>
                         </div>
